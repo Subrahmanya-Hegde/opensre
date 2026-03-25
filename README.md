@@ -27,6 +27,8 @@ git clone https://github.com/Tracer-Cloud/open-sre-agent
 cd open-sre-agent
 make install
 cp .env.example .env
+# run opensre onboard to configure your local LLM provider
+opensre onboard
 make local-grafana-live
 ```
 
@@ -47,6 +49,10 @@ make local-grafana-live
 <p align="center">
   <img src="docs/assets/local-grafana-live-flow.gif" alt="Live local Grafana flow" width="100%" />
 </p>
+
+Want help configuring a local LLM provider quickly? Run `opensre onboard` after `make install`.
+
+Want to run the LangGraph dev UI or connect your own systems? See [SETUP.md](SETUP.md).
 
 ---
 

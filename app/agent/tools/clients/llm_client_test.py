@@ -7,14 +7,16 @@ from anthropic import AuthenticationError, BadRequestError, InternalServerError
 from app.agent.tools.clients import llm_client
 
 
-def test_get_llm_uses_openai_provider(monkeypatch) -> None:
+def test_get_llm_uses_openai_model_from_env(monkeypatch) -> None:
     monkeypatch.setenv("LLM_PROVIDER", "openai")
     monkeypatch.setenv("OPENAI_API_KEY", "test-key")
+    monkeypatch.setenv("OPENAI_MODEL", "gpt-5-mini")
     monkeypatch.setattr(llm_client, "_llm", None)
 
     client = llm_client.get_llm()
 
     assert isinstance(client, llm_client.OpenAILLMClient)
+    assert client._model == "gpt-5-mini"
     monkeypatch.setattr(llm_client, "_llm", None)
 
 
