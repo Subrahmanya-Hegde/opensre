@@ -368,15 +368,15 @@ test-grafana:
 # against the real broker.  Used for the screen-video demo; NOT part of CI.
 rabbitmq-local-up:
 	@echo "Starting local RabbitMQ stack (broker + publisher + slow consumer)..."
-	docker compose -f docker-compose.rabbitmq.yml up -d
+	docker compose -f infra/docker-compose.rabbitmq.yml up -d
 	@echo "Waiting for broker to become healthy..."
-	@until docker compose -f docker-compose.rabbitmq.yml ps rabbitmq | grep -q "(healthy)"; do sleep 2; done
+	@until docker compose -f infra/docker-compose.rabbitmq.yml ps rabbitmq | grep -q "(healthy)"; do sleep 2; done
 	@echo "Broker healthy.  Letting backlog build for 20s..."
 	@sleep 20
 	@echo "Ready."
 
 rabbitmq-local-down:
-	docker compose -f docker-compose.rabbitmq.yml down -v
+	docker compose -f infra/docker-compose.rabbitmq.yml down -v
 
 # Run the RabbitMQ integration + tool tests, then invoke the verify command
 # against the live broker.  Requires the rabbitmq-local-up stack to be running.
