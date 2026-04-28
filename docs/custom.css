@@ -1,3 +1,137 @@
+/* Keep this file minimal. Prefer Mintlify defaults + `sidebar.css`. */
+
+/* Radar chart helpers (used by `radar-chart.js`). */
+.radar-chart-container {
+  max-width: 100%;
+  margin: 2rem auto;
+  padding: 20px 30px;
+}
+
+.radar-chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.radar-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.radar-legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+}
+
+.radar-tooltip {
+  position: absolute;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.25rem;
+  padding: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  max-width: 300px;
+  z-index: 1000;
+  color: #374151;
+}
+
+.radar-tooltip.show {
+  opacity: 1;
+}
+
+html.dark .radar-tooltip {
+  background: #0a0a0a;
+  border-color: #262626;
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Intentionally small: legacy hook for optional overrides.
+   Most styling should stay in Mintlify defaults + `sidebar.css`. */
+
+/* TOC custom actions (injected by `toc-actions.js`). */
+.toc-custom-actions {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+html.dark .toc-custom-actions {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.toc-custom-action {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.75rem;
+}
+
+/* Radar chart helpers (used by `radar-chart.js`). */
+.radar-chart-container {
+  max-width: 100%;
+  margin: 2rem auto;
+  padding: 20px 30px;
+}
+
+.radar-chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.radar-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.radar-legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+}
+
+.radar-tooltip {
+  position: absolute;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.25rem;
+  padding: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  max-width: 300px;
+  z-index: 1000;
+  color: #374151;
+}
+
+.radar-tooltip.show {
+  opacity: 1;
+}
+
+html.dark .radar-tooltip {
+  background: #0a0a0a;
+  border-color: #262626;
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
 /* Fonts are loaded via docs.json configuration - Mintlify applies them automatically */
 
 /* ========================================
