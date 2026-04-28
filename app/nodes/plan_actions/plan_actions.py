@@ -200,7 +200,6 @@ def detect_reroute_trigger(
 def plan_actions(
     input_data: InvestigateInput,
     plan_model: type[BaseModel],
-    _pipeline_name: str = "",
     resolved_integrations: dict[str, object] | None = None,
 ) -> tuple[
     BaseModel | None,
@@ -220,7 +219,6 @@ def plan_actions(
     Args:
         input_data: InvestigateInput (or compatible) object
         plan_model: Pydantic model for structured LLM output
-        _pipeline_name: Unused (was for memory lookup, kept for caller compatibility)
         resolved_integrations: Pre-fetched integration credentials from resolve_integrations node
 
     Returns:
